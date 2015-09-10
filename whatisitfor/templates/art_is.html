@@ -1,0 +1,63 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>o que é a arte? para que serve?</title>
+
+    <style type="text/css">
+      body {
+        font-family: "Courier New";
+      }
+
+      .what-art-is {
+        text-align: center;
+        margin-top: 150px;
+      }
+
+      .what-is-it-for {
+        text-align: center;
+      }
+
+      .what {
+        margin-top: 100px;
+      }
+
+      .art {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: right;
+      }
+
+      .is {
+        margin-right: 10px;
+      }
+
+      .it {
+        width: 300px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <h3>o que é a arte? para que serve?</h3>
+    <div class="what-art-is">
+      <h1>"{{object.art_is}}"</h1>
+      <a class="what-is-it-for" href="{% url 'what-is-it-for' %}">o que mais?</a>
+    </div>
+
+    <div class="what what-is-it-for">
+      <form action="" method="post">
+        {% csrf_token %}
+        <textarea name="what_is" rows="3" maxlength="140" class="it"></textarea>
+        <br>
+        <input type="submit" value="enviar">
+      </form>
+    </div>
+
+    <div class="art">
+      <span class="is">inspirado na obra de paulo bruscky</span>
+    </div>
+  </body>
+</html>
