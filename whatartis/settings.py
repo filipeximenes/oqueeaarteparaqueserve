@@ -32,7 +32,7 @@ SECRET_KEY = '$797u0&l!nupimm8&1hsf(&@4e1&+opa6y1ha+t^qr=nlo6b0p'
 DEBUG = config('DEBUG', default=True, cast=bool)
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
