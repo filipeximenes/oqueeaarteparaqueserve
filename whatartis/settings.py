@@ -29,7 +29,8 @@ def base_dir_join(*args):
 SECRET_KEY = '$797u0&l!nupimm8&1hsf(&@4e1&+opa6y1ha+t^qr=nlo6b0p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=True, cast=bool)
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = []
 
