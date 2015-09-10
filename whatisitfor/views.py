@@ -10,6 +10,15 @@ class WhatArtIs(generic.DetailView):
     model = What
     template_name = 'art_is.html'
 
+    def get(self, request, **kwargs):
+        try:
+            self.object = self.get_object()
+        except:
+            return redirect(reverse('what-is-it-for'))
+
+        context = self.get_context_data(object=self.object)
+        return self.render_to_response(context)
+
     def post(self, request, **kwargs):
         what_is = request.POST.get('what_is', None)
         if what_is:
