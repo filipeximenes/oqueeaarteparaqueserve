@@ -10,6 +10,6 @@ from whatisitfor.views import WhatArtIs, WhatIsItFor
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^/$', WhatIsItFor.as_view(), name='what-is-it-for'),
+    url(r'^$', WhatIsItFor.as_view(), name='what-is-it-for'),
     url(r'^o/(?P<pk>[-\d]+)/$', WhatArtIs.as_view(), name='what-art-is'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
